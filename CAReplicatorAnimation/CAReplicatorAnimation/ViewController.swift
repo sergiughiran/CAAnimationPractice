@@ -18,6 +18,7 @@ final class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         circleView.layer.borderColor = #colorLiteral(red: 0.1215686275, green: 0.1294117647, blue: 0.1411764706, alpha: 1)
         circleView.layer.borderWidth = 2.0
         circleView.layer.zPosition = 1
@@ -32,6 +33,7 @@ final class ViewController: UIViewController {
 
     // MARK: - Logic
     
+    // This is a replica of the Tinder loading animation
     private func setupPulseAnimation() {
         circleView.isHidden = false
         
@@ -86,7 +88,9 @@ final class ViewController: UIViewController {
 
         view.layer.addSublayer(replicator)
     }
-    
+
+    // This is a basic circle spinning indicator
+    // NOTE: - Not final
     private func setupCircleLoadingIndicator() {
         let instanceCount = 20.0
         let animationDuration = 3.0
@@ -121,7 +125,9 @@ final class ViewController: UIViewController {
         
         view.layer.addSublayer(replicator)
     }
-    
+
+    // This is a replica of the Google loading indicator
+    // NOTE: - `easeInEaseOut` animation not implemented yet for expand/close
     private func setupArcLoadingIndicator() {
         let loadingIndicator = LoadingIndicatorView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
         view.addSubview(loadingIndicator)
